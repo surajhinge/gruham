@@ -1,71 +1,40 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Register = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+const Signup = () => {
+  const [mobile, setMobile] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [message, setMessage] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/users/register/",
-        formData
-      );
-      setMessage(response.data.message);
+      await axios.post("http://127.0.0.1:8000/users/signup/", {
+        mobile,
+        password,
+      });
+      alert("User created successfully!");
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
+      alert("Error: Mobile number may already exist");
     }
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-      {message && <p>{message}</p>}
-    </div>
+    <form onSubmit={handleSignup}>
+      <input
+        type="text"
+        placeholder="Mobile"
+        value={mobile}
+        onChange={(e) => setMobile(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Sign Up</button>
+    </form>
   );
 };
 
-export default Register;
+export default Signup;
