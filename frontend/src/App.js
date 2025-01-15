@@ -5,6 +5,7 @@ import Signup from "./components/SignUp/SignUp";
 import HomeDashboard from "./components/HomeDashboard/HomeDashboard";
 import Logout from "./components/Logout/Logout";
 import FlatsDashboard from "./components/Flats/FlatsDashboard";
+import PostProperty from "./components/post-property/post-property";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/home" element={<HomeDashboard />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/flats" element={<FlatsDashboard />} />
+        <Route path="/flats" element={<FlatsDashboard />} />
+        <Route path="/post-property" element={<PostProperty />} />
       </Routes>
     </Router>
   );
