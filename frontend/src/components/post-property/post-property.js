@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const PostProperty = () => {
   const [title, setTitle] = useState("");
@@ -7,6 +8,7 @@ const PostProperty = () => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [image, setImage] = useState(null);
+  const navigate = useNavigate(); // Initialize navigate hook
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +32,7 @@ const PostProperty = () => {
         }
       );
       alert("Property posted successfully!");
+      navigate("/flats"); // Redirect to the Flats page
     } catch (error) {
       alert("Error posting property. Please try again.");
     }

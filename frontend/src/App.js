@@ -16,7 +16,6 @@ function App() {
         <Route path="/home" element={<HomeDashboard />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/flats" element={<FlatsDashboard />} />
-        <Route path="/flats" element={<FlatsDashboard />} />
         <Route path="/post-property" element={<PostProperty />} />
       </Routes>
     </Router>
