@@ -31,7 +31,7 @@ const PostProperty = () => {
           },
         }
       );
-      alert("Property posted successfully!");
+      //   alert("Property posted successfully!");
       navigate("/flats"); // Redirect to the Flats page
     } catch (error) {
       alert("Error posting property. Please try again.");
@@ -52,7 +52,7 @@ const PostProperty = () => {
       >
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
-            Property Title
+            BHK Type (e.g. 1 BHK, 2 BHK, etc.)
           </label>
           <input
             type="text"
@@ -65,14 +65,13 @@ const PostProperty = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="description" className="form-label">
-            Description
+            Contact Details
           </label>
           <textarea
             id="description"
             className="form-control"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            rows="4"
             required
           ></textarea>
         </div>

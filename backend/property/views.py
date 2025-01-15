@@ -4,11 +4,16 @@ from rest_framework import status
 from .models import Property
 from .serializers import PropertySerializer
 
-@api_view(['POST'])
+@api_view(['POST', 'GET'])
 def post_property(request):
     if request.method == 'POST':
         serializer = PropertySerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save()   
             return Response({"message": "Property posted successfully!"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    elif request.method == 'GET':
+        properties = Property.objects.all()
+        serializer = PropertySerializer(properties, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
