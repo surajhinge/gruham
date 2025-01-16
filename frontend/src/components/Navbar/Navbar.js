@@ -3,9 +3,24 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+      style={{
+        background: "linear-gradient(90deg, #007bff, #0056b3)", // Gradient background for a modern look
+        borderRadius: "0 0 15px 15px", // Rounded corners at the bottom
+        padding: "15px 30px",
+      }}
+    >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/home">
+        <Link
+          className="navbar-brand"
+          to="/home"
+          style={{
+            fontSize: "clamp(1.5rem, 4vw, 2rem)",
+            fontWeight: "700",
+            color: "#fff",
+          }}
+        >
           Gruham
         </Link>
         <button
@@ -22,12 +37,34 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/home">
+              <Link
+                className="nav-link"
+                to="/home"
+                style={{
+                  fontSize: "clamp(1rem, 1.5vw, 1.1rem)",
+                  color: "#fff",
+                  fontWeight: "500",
+                  transition: "color 0.3s ease",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "#ffd700")}
+                onMouseLeave={(e) => (e.target.style.color = "#fff")}
+              >
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/logout">
+              <Link
+                className="nav-link"
+                to="/logout"
+                style={{
+                  fontSize: "clamp(1rem, 1.5vw, 1.1rem)",
+                  color: "#fff",
+                  fontWeight: "500",
+                  transition: "color 0.3s ease",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "#ffd700")}
+                onMouseLeave={(e) => (e.target.style.color = "#fff")}
+              >
                 Logout
               </Link>
             </li>

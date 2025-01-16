@@ -1,0 +1,110 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Loading and Error Containers */
+.loading-container,
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+
+/* Main Dashboard Container */
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  padding: 20px;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-section {
+  margin-bottom: 30px;
+}
+
+.header-section h3 {
+  font-weight: bold;
+  color: #333;
+}
+
+.header-section p {
+  color: #555;
+}
+
+.header-section .btn-primary {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.header-section .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Property Cards */
+.property-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.property-card:hover {
+  transform: scale(1.03);
+}
+
+.property-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.property-details {
+  padding: 15px;
+}
+
+.property-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.property-description {
+  color: #555;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.property-location {
+  font-size: 14px;
+  color: #777;
+}
+
+.property-price {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 16px;
+  margin-top: 10px;
+}

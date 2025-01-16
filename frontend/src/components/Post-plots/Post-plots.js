@@ -9,12 +9,11 @@ const PostPlot = () => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [image, setImage] = useState(null);
-  const navigate = useNavigate(); // Initialize navigate hook
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Create a FormData object to handle file upload
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
@@ -23,7 +22,7 @@ const PostPlot = () => {
     formData.append("image", image);
 
     try {
-      const response = await axios.post(
+      await axios.post(
         "http://127.0.0.1:8000/plot_property/plot_properties/",
         formData,
         {
@@ -32,7 +31,7 @@ const PostPlot = () => {
           },
         }
       );
-      navigate("/plots"); // Redirect to the Plots page
+      navigate("/plots");
     } catch (error) {
       alert("Error posting plot. Please try again.");
     }
@@ -43,87 +42,158 @@ const PostPlot = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div
+      style={{
+        background: "linear-gradient(135deg, #b3cde0, #cfe3ff)", // Light blue gradient background
+        minHeight: "100vh",
+        padding: "20px",
+      }}
+    >
       <Navbar />
 
-      <br />
-      <br />
-      <h3 className="mb-4 text-center">Post Your Plot</h3>
-      <form
-        onSubmit={handleSubmit}
-        className="shadow-sm p-4"
-        style={{ maxWidth: "600px", margin: "0 auto" }}
-      >
-        <div className="mb-3">
-          <label htmlFor="title" className="form-label">
-            Plot Area
-          </label>
-          <input
-            type="text"
-            id="title"
-            className="form-control"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="description" className="form-label">
-            Plot Details (e.g., area, contact info)
-          </label>
-          <textarea
-            id="description"
-            className="form-control"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          ></textarea>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="price" className="form-label">
-            Price (₹)
-          </label>
-          <input
-            type="number"
-            id="price"
-            className="form-control"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="location" className="form-label">
-            Location
-          </label>
-          <input
-            type="text"
-            id="location"
-            className="form-control"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="image" className="form-label">
-            Plot Image
-          </label>
-          <input
-            type="file"
-            id="image"
-            className="form-control"
-            onChange={handleImageChange}
-            accept="image/*"
-            required
-          />
-        </div>
-        <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
-            Post Plot
-          </button>
-        </div>
-      </form>
+      <div className="container mt-5">
+        <h3
+          className="mb-4 text-center"
+          style={{ color: "#333", fontSize: "clamp(1.8rem, 4vw, 2.5rem)" }}
+        >
+          Post Your Plot
+        </h3>
+        <form
+          onSubmit={handleSubmit}
+          className="shadow-lg p-4 rounded-3"
+          style={{
+            backgroundColor: "white",
+            maxWidth: "600px",
+            margin: "0 auto",
+            borderRadius: "15px",
+          }}
+        >
+          <div className="mb-3">
+            <label
+              htmlFor="title"
+              className="form-label"
+              style={{ fontWeight: "600", color: "#333" }}
+            >
+              Plot Area
+            </label>
+            <input
+              type="text"
+              id="title"
+              className="form-control"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+              style={{
+                borderRadius: "8px",
+                padding: "12px 15px",
+                fontSize: "clamp(1rem, 1.5vw, 1.2rem)",
+              }}
+            />
+          </div>
+          <div className="mb-3">
+            <label
+              htmlFor="description"
+              className="form-label"
+              style={{ fontWeight: "600", color: "#333" }}
+            >
+              Plot Details (e.g., area, contact info)
+            </label>
+            <textarea
+              id="description"
+              className="form-control"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+              style={{
+                borderRadius: "8px",
+                padding: "12px 15px",
+                fontSize: "clamp(1rem, 1.5vw, 1.2rem)",
+              }}
+            ></textarea>
+          </div>
+          <div className="mb-3">
+            <label
+              htmlFor="price"
+              className="form-label"
+              style={{ fontWeight: "600", color: "#333" }}
+            >
+              Price (₹)
+            </label>
+            <input
+              type="number"
+              id="price"
+              className="form-control"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              required
+              style={{
+                borderRadius: "8px",
+                padding: "12px 15px",
+                fontSize: "clamp(1rem, 1.5vw, 1.2rem)",
+              }}
+            />
+          </div>
+          <div className="mb-3">
+            <label
+              htmlFor="location"
+              className="form-label"
+              style={{ fontWeight: "600", color: "#333" }}
+            >
+              Location
+            </label>
+            <input
+              type="text"
+              id="location"
+              className="form-control"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              required
+              style={{
+                borderRadius: "8px",
+                padding: "12px 15px",
+                fontSize: "clamp(1rem, 1.5vw, 1.2rem)",
+              }}
+            />
+          </div>
+          <div className="mb-3">
+            <label
+              htmlFor="image"
+              className="form-label"
+              style={{ fontWeight: "600", color: "#333" }}
+            >
+              Plot Image
+            </label>
+            <input
+              type="file"
+              id="image"
+              className="form-control"
+              onChange={handleImageChange}
+              accept="image/*"
+              required
+              style={{
+                borderRadius: "8px",
+                padding: "12px 15px",
+                fontSize: "clamp(1rem, 1.5vw, 1.2rem)",
+              }}
+            />
+          </div>
+          <div className="d-grid">
+            <button
+              type="submit"
+              className="btn btn-primary"
+              style={{
+                padding: "12px",
+                fontSize: "clamp(1rem, 1.5vw, 1.2rem)",
+                background: "linear-gradient(90deg, #007bff, #0056b3)",
+                border: "none",
+                borderRadius: "8px",
+              }}
+            >
+              Post Plot
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
