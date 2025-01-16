@@ -5,6 +5,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('property/', include('property.urls')),
+    path('plot_property/', include('plots.urls')),
 ]
 
 from django.conf import settings

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../Navbar/Navbar";
 
 const FlatsDashboard = () => {
   const [properties, setProperties] = useState([]);
@@ -42,6 +43,10 @@ const FlatsDashboard = () => {
   return (
     <div className="container mt-5">
       <div className="text-center">
+        <Navbar />
+
+        <br />
+        <br />
         <h3 className="mb-4">Hello, welcome to Flats Dashboard!</h3>
         <p>Explore properties or post your property for free.</p>
         <button className="btn btn-success" onClick={handlePostProperty}>

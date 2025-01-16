@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 
-const PostProperty = () => {
+const PostPlot = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -24,7 +24,7 @@ const PostProperty = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/property/properties/",
+        "http://127.0.0.1:8000/plot_property/plot_properties/",
         formData,
         {
           headers: {
@@ -32,10 +32,9 @@ const PostProperty = () => {
           },
         }
       );
-      //   alert("Property posted successfully!");
-      navigate("/flats"); // Redirect to the Flats page
+      navigate("/plots"); // Redirect to the Plots page
     } catch (error) {
-      alert("Error posting property. Please try again.");
+      alert("Error posting plot. Please try again.");
     }
   };
 
@@ -49,7 +48,7 @@ const PostProperty = () => {
 
       <br />
       <br />
-      <h3 className="mb-4 text-center">Post Your Property</h3>
+      <h3 className="mb-4 text-center">Post Your Plot</h3>
       <form
         onSubmit={handleSubmit}
         className="shadow-sm p-4"
@@ -57,7 +56,7 @@ const PostProperty = () => {
       >
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
-            BHK Type (e.g. 1 BHK, 2 BHK, etc.)
+            Plot Area
           </label>
           <input
             type="text"
@@ -70,7 +69,7 @@ const PostProperty = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="description" className="form-label">
-            Contact Details
+            Plot Details (e.g., area, contact info)
           </label>
           <textarea
             id="description"
@@ -82,7 +81,7 @@ const PostProperty = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="price" className="form-label">
-            Price
+            Price (₹)
           </label>
           <input
             type="number"
@@ -108,7 +107,7 @@ const PostProperty = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="image" className="form-label">
-            Property Image
+            Plot Image
           </label>
           <input
             type="file"
@@ -121,7 +120,7 @@ const PostProperty = () => {
         </div>
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
-            Post Property
+            Post Plot
           </button>
         </div>
       </form>
@@ -129,4 +128,4 @@ const PostProperty = () => {
   );
 };
 
-export default PostProperty;
+export default PostPlot;

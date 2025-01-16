@@ -22,11 +22,11 @@ const HomeDashboard = () => {
       icon: faMapMarkerAlt,
       navigate: "/plots",
     },
-    {
-      name: "Projects",
-      icon: faBullhorn,
-      navigate: "/projects",
-    },
+    // {
+    //   name: "Projects",
+    //   icon: faBullhorn,
+    //   navigate: "/projects",
+    // },
   ];
 
   return (
