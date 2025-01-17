@@ -21,7 +21,7 @@ const Navbar = () => {
             color: "#fff",
           }}
         >
-          Gruham
+          Nivasah
         </Link>
         <button
           className="navbar-toggler"
