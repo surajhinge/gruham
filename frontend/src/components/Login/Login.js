@@ -41,7 +41,7 @@ const Login = () => {
         }}
       >
         <h3 className="text-center mb-3" style={{ color: "#4a4a4a" }}>
-          Welcome to Nivasah.com
+          Welcome to Vastyam.com
         </h3>
         <p className="text-center text-muted mb-4">
           Log in to access your account.
