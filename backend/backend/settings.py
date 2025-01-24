@@ -25,6 +25,17 @@ SECRET_KEY = 'django-insecure-s7v!yvgp*&^62_g=jn*el3!mzw%p^5n#9r!6$um$53-gieh*(7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+# Force HTTPS
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 31536000  # Enable HTTP Strict Transport Security (HSTS)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+
 ALLOWED_HOSTS = ['ip-172-31-30-3.ec2.internal' ,'54.145.26.234', 'localhost']
 
 
