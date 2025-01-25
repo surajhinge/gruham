@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'property',
     'plots',
-    'sslserver'
+    'sslserver',
+    'django_extensions',
     # 'users',
 ]
 
