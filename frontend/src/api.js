@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "api.vastyam.com:8000/api/", // Django backend URL
+  baseURL: "107.21.129.33:8000/api/", // Django backend URL
 });
 
 API.interceptors.request.use((req) => {

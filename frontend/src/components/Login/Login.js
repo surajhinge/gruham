@@ -10,7 +10,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("api.vastyam.com:8000/users/login/", {
+      const response = await axios.post("107.21.129.33:8000/users/login/", {
         mobile,
         password,
       });

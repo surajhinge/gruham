@@ -17,7 +17,7 @@ const FlatsDashboard = () => {
     const fetchProperties = async () => {
       try {
         const response = await axios.get(
-          "api.vastyam.com:8000/property/properties/"
+          "107.21.129.33:8000/property/properties/"
         );
         setProperties(response.data);
       } catch (err) {
@@ -136,7 +136,7 @@ const FlatsDashboard = () => {
                   }
                 >
                   <img
-                    src={`api.vastyam.com:8000${property.image}`}
+                    src={`107.21.129.33:8000${property.image}`}
                     className="card-img-top"
                     alt={property.title}
                     style={{
