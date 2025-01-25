@@ -10,7 +10,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://54.145.26.234:8000/users/signup/", {
+      await axios.post("http://107.21.129.33:8000/users/signup/", {
         mobile,
         password,
       });
