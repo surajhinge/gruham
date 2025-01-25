@@ -19,7 +19,7 @@ const PlotsDashboard = () => {
     const fetchPlots = async () => {
       try {
         const response = await axios.get(
-          "http://107.21.129.33:8000/plot_property/plot_properties/"
+          "https://vastyam.com:8000/plot_property/plot_properties/"
         );
         setPlots(response.data);
       } catch (err) {
@@ -131,7 +131,7 @@ const PlotsDashboard = () => {
                 }
               >
                 <img
-                  src={`http://107.21.129.33:8000${plot.image}`}
+                  src={`https://vastyam.com:8000${plot.image}`}
                   className="card-img-top"
                   alt={plot.title}
                   style={{

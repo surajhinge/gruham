@@ -10,7 +10,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://107.21.129.33:8000/users/signup/", {
+      await axios.post("https://vastyam.com:8000/users/signup/", {
         mobile,
         password,
       });
