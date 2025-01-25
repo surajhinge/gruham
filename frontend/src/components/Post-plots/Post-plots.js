@@ -23,7 +23,7 @@ const PostPlot = () => {
 
     try {
       await axios.post(
-        "https://vastyam.com:8000/plot_property/plot_properties/",
+        "api.vastyam.com:8000/plot_property/plot_properties/",
         formData,
         {
           headers: {

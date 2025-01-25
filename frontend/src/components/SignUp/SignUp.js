@@ -10,7 +10,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://vastyam.com:8000/users/signup/", {
+      await axios.post("api.vastyam.com:8000/users/signup/", {
         mobile,
         password,
       });
