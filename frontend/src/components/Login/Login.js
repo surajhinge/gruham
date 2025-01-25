@@ -10,7 +10,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:8000/users/login/", {
+      const response = await axios.post("http://54.145.26.234:8000/users/login/", {
         mobile,
         password,
       });
@@ -41,7 +41,7 @@ const Login = () => {
         }}
       >
         <h3 className="text-center mb-3" style={{ color: "#4a4a4a" }}>
-          Welcome to Nivasah.com
+          Welcome to Vastyam.com
         </h3>
         <p className="text-center text-muted mb-4">
           Log in to access your account.
