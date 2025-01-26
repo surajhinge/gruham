@@ -176,17 +176,17 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # SECURE_HSTS_PRELOAD = True
 
 
-# Redirect HTTP to HTTPS
-SECURE_SSL_REDIRECT = True
+# # Redirect HTTP to HTTPS
+# SECURE_SSL_REDIRECT = True
 
-# Use HSTS (HTTP Strict Transport Security)
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+# # Use HSTS (HTTP Strict Transport Security)
+# SECURE_HSTS_SECONDS = 31536000
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
 
-# Secure cookies
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# # Secure cookies
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
-# Support HTTPS through proxy headers
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# # Support HTTPS through proxy headers
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
