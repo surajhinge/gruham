@@ -23,7 +23,7 @@ const PostPlot = () => {
 
     try {
       await axios.post(
-        "http://107.21.129.33:8000/plot_property/plot_properties/",
+        "http://54.210.136.137:8000/plot_property/plot_properties/",
         formData,
         {
           headers: {
