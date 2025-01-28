@@ -180,7 +180,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # SECURE_HSTS_PRELOAD = True
 
 
-Redirect HTTP to HTTPS
+# Redirect HTTP to HTTPS
 SECURE_SSL_REDIRECT = True
 
 # Use HSTS (HTTP Strict Transport Security)
