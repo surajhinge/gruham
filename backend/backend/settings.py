@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'property',
     'plots',
+    'sslserver'
     # 'users',
 ]
 
