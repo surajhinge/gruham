@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'property',
     'plots',
     'sslserver',
+    'django_extensions',
     # 'users',
 ]
 
