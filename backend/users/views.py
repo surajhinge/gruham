@@ -7,6 +7,9 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 class LoginView(APIView):
+    def get(self, request):
+        return Response({'message': 'Use POST to login'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
     def post(self, request):
         mobile = request.data.get('mobile')
         password = request.data.get('password')
@@ -23,6 +26,9 @@ class LoginView(APIView):
         return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
 class SignUpView(APIView):
+    def get(self, request):
+        return Response({'message': 'Use POST to signup'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
     def post(self, request):
         mobile = request.data.get('mobile')
         password = request.data.get('password')
