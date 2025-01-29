@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['ip-172-31-93-191.ec2.internal', '54.210.136.137', 'backend.vastyam.com', 'www.backend.vastyam.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://vastyam.com',
+    'https://backend.vastyam.com',
+]
+
 
 # Application definition
 
@@ -43,7 +48,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'property',
     'plots',
-    'django_extensions',
+    'sslserver',
     # 'users',
 ]
 
@@ -171,22 +176,29 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
-SECURE_HSTS_SECONDS = 0  # Disable HSTS
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-
-
-# # Redirect HTTP to HTTPS
-# SECURE_SSL_REDIRECT = True
-
-# # Use HSTS (HTTP Strict Transport Security)
-# SECURE_HSTS_SECONDS = 31536000
+# SECURE_HSTS_SECONDS = 0  # Disable HSTS
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
 
-# # Secure cookies
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
 
-# # Support HTTPS through proxy headers
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# Redirect HTTP to HTTPS
+SECURE_SSL_REDIRECT = True
+
+# Use HSTS (HTTP Strict Transport Security)
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# Secure cookies
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# Support HTTPS through proxy headers
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
+SECURE_HSTS_SECONDS = 31536000  # Enable HTTP Strict Transport Security (HSTS)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
