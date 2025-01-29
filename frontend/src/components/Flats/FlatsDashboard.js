@@ -17,7 +17,7 @@ const FlatsDashboard = () => {
     const fetchProperties = async () => {
       try {
         const response = await axios.get(
-          "http://54.210.136.137:8000/api/property/properties/"
+          "http://127.0.0.1:8000/api/property/properties/"
         );
         setProperties(response.data);
       } catch (err) {
@@ -136,7 +136,7 @@ const FlatsDashboard = () => {
                   }
                 >
                   <img
-                    src={`http://54.210.136.137:8000${property.image}`}
+                    src={`http://127.0.0.1:8000${property.image}`}
                     className="card-img-top"
                     alt={property.title}
                     style={{
