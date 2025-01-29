@@ -19,7 +19,7 @@ const PlotsDashboard = () => {
     const fetchPlots = async () => {
       try {
         const response = await axios.get(
-          "http://54.210.136.137:8000/plot_property/plot_properties/"
+          "http://54.210.136.137:8000/api/plot_property/plot_properties/"
         );
         setPlots(response.data);
       } catch (err) {

@@ -17,7 +17,7 @@ const FlatsDashboard = () => {
     const fetchProperties = async () => {
       try {
         const response = await axios.get(
-          "http://54.210.136.137:8000/property/properties/"
+          "http://54.210.136.137:8000/api/property/properties/"
         );
         setProperties(response.data);
       } catch (err) {
