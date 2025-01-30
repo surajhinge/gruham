@@ -24,7 +24,7 @@ const PostProperty = () => {
 
     try {
       const response = await axios.post(
-        "http://54.210.136.137:8000/api/property/properties/",
+        "http://backend.vastyam.com:8000/api/property/properties/",
         formData,
         {
           headers: {
