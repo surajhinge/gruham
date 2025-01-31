@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import './redirect'; // Import the redirect.js here
 
 const Login = () => {
   const [mobile, setMobile] = useState("");
