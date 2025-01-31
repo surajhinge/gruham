@@ -13,10 +13,19 @@ const Login = () => {
       const response = await axios.post("http://backend.vastyam.com:8000/api/users/login/", {
         mobile,
         password,
+      }, {
+        headers: {
+          // Adding header to allow mixed content in development
+          'Content-Type': 'application/json',
+        },
+        // This may help avoid issues in development but still not ideal for production
+        maxRedirects: 0,
+        timeout: 5000
       });
+
       localStorage.setItem("accessToken", response.data.access);
       localStorage.setItem("refreshToken", response.data.refresh);
-      navigate("/home"); // Navigate to the home page after login
+      navigate("/home");
     } catch (error) {
       alert("Invalid credentials");
     }
