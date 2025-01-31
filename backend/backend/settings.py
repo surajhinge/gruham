@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-s7v!yvgp*&^62_g=jn*el3!mzw%p^5n#9r!6$um$53-gieh*(7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ip-172-31-93-191.ec2.internal', '54.210.136.137', 'backend.vastyam.com', 'www.backend.vastyam.com']
+ALLOWED_HOSTS = ['ip-172-31-93-191.ec2.internal', '54.210.136.137', 'server.vastyam.com', 'www.server.vastyam.com', '*']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://vastyam.com',
-    'https://backend.vastyam.com',
+    'https://server.vastyam.com',
 ]
 
 
