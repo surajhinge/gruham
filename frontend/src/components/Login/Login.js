@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import './redirect'; // Import the redirect.js here
 
 const Login = () => {
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
-  // Redirect from HTTPS to HTTP if on HTTPS
-  useEffect(() => {
-    if (window.location.protocol === "https:") {
-      const httpUrl = "http://" + window.location.hostname + window.location.pathname + window.location.search;
-      window.location.replace(httpUrl);
-    }
-  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
