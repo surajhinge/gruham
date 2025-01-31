@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['ip-172-31-93-191.ec2.internal', '54.210.136.137', 'server.vast
 
 CSRF_TRUSTED_ORIGINS = [
     'https://vastyam.com',
-    'https://server.vastyam.com',
+    'http://server.vastyam.com',
 ]
 
 
@@ -179,3 +179,4 @@ SECURE_HSTS_SECONDS = 0  # Disable HSTS
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
+SECURE_SSL_REDIRECT = False
