@@ -10,7 +10,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://server.vastyam.com:8000/api/users/login/", {
+      const response = await axios.post("/api/users/login/", {
         mobile,
         password,
       });
