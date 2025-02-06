@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-s7v!yvgp*&^62_g=jn*el3!mzw%p^5n#9r!6$um$53-gieh*(7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ip-172-31-93-191.ec2.internal', '54.210.136.137', 'backend.vastyam.com', 'www.backend.vastyam.com']
+ALLOWED_HOSTS = ['ip-172-31-30-47.ec2.internal', '54.163.59.59', 'vastyam.com', 'www.vastyam.com', 'dnyani.com', 'www.dnyani.com', '*']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://vastyam.com',
-    'https://backend.vastyam.com',
+    'http://server.vastyam.com',
 ]
 
 
@@ -144,6 +144,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://vastyam.com"
 ]
 
 REST_FRAMEWORK = {
@@ -179,3 +180,4 @@ SECURE_HSTS_SECONDS = 0  # Disable HSTS
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
+SECURE_SSL_REDIRECT = False

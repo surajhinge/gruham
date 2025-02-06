@@ -19,7 +19,7 @@ const PlotsDashboard = () => {
     const fetchPlots = async () => {
       try {
         const response = await axios.get(
-          "http://backend.vastyam.com:8000/api/plot_property/plot_properties/"
+          "/api/plot_property/plot_properties/"
         );
         setPlots(response.data);
       } catch (err) {
@@ -131,7 +131,7 @@ const PlotsDashboard = () => {
                 }
               >
                 <img
-                  src={`http://backend.vastyam.com:8000${plot.image}`}
+                  src={`${plot.image}`}
                   className="card-img-top"
                   alt={plot.title}
                   style={{
